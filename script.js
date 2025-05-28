@@ -49,47 +49,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Инициализация слайдера
     function initSlider() {
-        showSlide(0);
-        startSlider();
-        
-        // Остановка при наведении
-        const slider = document.querySelector('.hero-slider');
-        slider.addEventListener('mouseenter', () => {
-            clearInterval(sliderInterval);
-        });
-        
-        // Возобновление при уходе курсора
-        slider.addEventListener('mouseleave', startSlider);
-        
-        // Обработчики для стрелок
-        nextArrow.addEventListener('click', () => {
-            nextSlide();
-            resetInterval();
-        });
-        
-        prevArrow.addEventListener('click', () => {
-            prevSlide();
-            resetInterval();
-        });
-        
-        // Обработчики для точек
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-                resetInterval();
-            });
-        });
-    }
+    showSlide(0);
     
-    // Сброс интервала
-    function resetInterval() {
+    // Уменьшаем интервал для мобильных устройств
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const interval = isMobile ? 3000 : 5000;
+    sliderInterval = setInterval(nextSlide, interval);
+    
+    // Остальной код остается без изменений
+    const slider = document.querySelector('.hero-slider');
+    slider.addEventListener('mouseenter', () => {
         clearInterval(sliderInterval);
-        sliderInterval = setInterval(nextSlide, intervalTime);
-    }
+    });
     
-    // Инициализируем слайдер
-    initSlider();
-});
+    slider.addEventListener('mouseleave', startSlider);
+    
+    nextArrow.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+    });
+    
+    prevArrow.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+    });
+    
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            resetInterval();
+        });
+    });
+}})
 
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', function() {

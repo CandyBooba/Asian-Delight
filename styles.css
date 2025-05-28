@@ -1332,6 +1332,8 @@ section.show {
     }
 }
 
+
+
 /* Адаптивность логотипа */
 .logo img {
     max-width: 100%;
@@ -1347,5 +1349,46 @@ section.show {
 @media (max-width: 480px) {
     .logo img {
         max-width: 200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero {
+        flex-direction: column;
+        padding-top: 100px;
+        min-height: auto; /* Добавляем это */
+    }
+    
+    .hero-content {
+        text-align: center;
+        margin-bottom: 40px;
+        max-width: 100%;
+        padding: 0 20px; /* Добавляем это */
+        animation: fadeInUp 0.8s both;
+    }
+    
+    .hero-slider {
+        width: 100%;
+        max-width: 800px;
+        height: 400px; /* Фиксированная высота вместо 50vh */
+        margin: 0 auto; /* Центрируем */
+        animation: fadeInUp 0.8s 0.2s both;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 350px; /* Уменьшаем высоту для средних экранов */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-slider {
+        height: 250px; /* Еще меньше для маленьких экранов */
+    }
+    
+    .slider-image {
+        object-fit: contain; /* Чтобы изображения полностью помещались */
+        background-color: #fff; /* Фон для прозрачных изображений */
     }
 }

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian Delight - Азиатские продукты</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<section class="hero">
+        <div class="hero-content">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="Asian Delight Logo">
+            </div>
+            <h1>Настоящие азиатские вкусы</h1>
+            <p class="description">Мы предлагаем свежие и аутентичные продукты из Японии, Китая, Кореи и Таиланда. Только качественные ингредиенты для вашей кухни.</p>
+            <p class="slogan">Вкусно и качественно!</p>
+            <button class="cta-button" onclick="window.open('docs/СВЧ лаба 4 я ультанул.pdf')">Посмотреть ассортимент</button>
+        </div>
+        
+        <div class="hero-slider">
+            <button class="slider-arrow slider-arrow-left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slider-container">
+                <img src="img/buldak.png" alt="острая лапша" class="slider-image">
+                <img src="img/candies2.jpeg" alt="Китайские конфетки" class="slider-image active">
+                <img src="img/crisps.jpg" alt="Чипсы" class="slider-image">
+                <img src="img/Naruto.jpg" alt="Рамён по аниме" class="slider-image">
+            </div>
+            <button class="slider-arrow slider-arrow-right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+</section>
+
+
+<section class="about" id="about">
+    <h2 class="about-title">О нашей компании</h2> <!-- Выносим заголовок отдельно -->
+    
+    <div class="about-content-wrapper"> <!-- Обертка для текста и картинки -->
+        <div class="about-text">
+            <p>Мы гордимся тем, что являемся поставщиками азиатских продуктов для самых взыскательных клиентов, включая Кремль. Наш опыт на рынке насчитывает уже более 200 лет.</p>
+            
+            <p>Все наши продукты проходят строгий контроль качества и бережно хранятся в специальных условиях, чтобы сохранить их аутентичный вкус и полезные свойства.</p>
+            
+            <p>Но наша миссия не только в продаже качественных продуктов. Мы активно участвуем в программе защиты азиатских слонов, перечисляя часть прибыли в фонды их сохранения.</p>
+            
+            <p>Выбирая наши продукты, вы поддерживаете не только гастрономические традиции Азии, но и заботу о природе этого удивительного региона.</p>
+        </div>
+        
+        <div class="about-image">
+            <img src="img/elephants.jpg" alt="Азиатский слон">
+        </div>
+    </div>
+</section>
+
+
+<section class="services" id="services">
+    <h2>Наши услуги</h2>
+    <div class="cards-container">
+        <!-- Карточка 1 -->
+        <div class="card-wrapper">
+            <div class="service-card">
+                <div class="card-header">
+                    <i class="fas fa-store"></i>
+                    <h3>Продажа на месте</h3>
+                </div>
+            </div>
+            <div class="card-description">
+                <p>Мы находимся в <a href="https://yandex.ru/maps/" target="_blank">бизнесцентре "Континент"</a>!</p>
+                <p>Скидки для оптовиков от 10% при заказе от 10,000 рублей. Постоянным клиентам дополнительная скидка 5%.</p>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="card-wrapper">
+            <div class="service-card">
+                <div class="card-header">
+                    <i class="fas fa-motorcycle"></i>
+                    <h3>Заказ курьером</h3>
+                </div>
+            </div>
+            <div class="card-description">
+                <p>Доставка в пределах 1 км - 50₽. Каждый последующий км +100₽. Минимальный заказ 500₽. Доставка с 10:00 до 22:00.</p>
+            </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="card-wrapper">
+            <div class="service-card">
+                <div class="card-header">
+                    <i class="fas fa-mug-hot"></i>
+                    <h3>Чайные церемонии</h3>
+                </div>
+            </div>
+            <div class="card-description">
+                <p>Китайская чайная церемония раскрывает новые грани аромата. Бесплатно - каждый 3-ий понедельник месяца. Платно (400₽/чел) - каждую неделю по вторникам.</p>
+            </div>
+        </div>
+
+        <!-- Карточка 4 -->
+        <div class="card-wrapper">
+            <div class="service-card">
+                <div class="card-header">
+                    <i class="fas fa-tv"></i>
+                    <h3>Просмотр аниме</h3>
+                </div>
+            </div>
+            <div class="card-description">
+                <p>По субботам в 19:00 в главном магазине устраивается совместный просмотр аниме. Уже посмотрели: Наруто, Тетрадь смерти. Сейчас досматриваем код Гиасса.</p>
+                <p class="highlight">Внимание! Просмотр аниме "Ван Пис" (с 1 августа). Суббота 19:00, бесплатно!</p>
+            </div>
+        </div>
+    </div>
+</section>
+        
+
+<section class="testimonials" id="reviews">
+    <div class="container">
+        <h2 class="section-title">Отзывы наших клиентов</h2>
+        
+        <div class="testimonials-grid">
+            <!-- Отзыв 1 -->
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Мария" class="testimonial-avatar">
+                    <div class="testimonial-author">
+                        <h3>Мария К.</h3>
+                        <div class="rating">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Лучший азиатский магазин в городе! Всегда свежие продукты и приятные цены. Особенно люблю их выбор китайских специй."</p>
+                <p class="testimonial-date">15 мая 2023</p>
+            </div>
+
+            <!-- Отзыв 2 -->
+            <div class="testimonial">
+        <div class="testimonial-header">
+            <img src="img/Fumio Kisida.jpg" alt="Fumio Kisida" class="testimonial-avatar">
+            <div class="testimonial-author">
+                <h3>Фумио Кишида</h3>
+                <div class="rating">
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star half">★</span>
+                </div>
+            </div>
+        </div>
+        <p class="testimonial-text">"Отличный выбор рамена по аниме и японских сладостей. Персонал всегда помогает с выбором. Минус один - иногда заканчивается любимый чай."</p>
+        <p class="testimonial-date">2 июня 2023</p>
+    </div>
+
+            <!-- Отзыв 3 -->
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Анна" class="testimonial-avatar">
+                    <div class="testimonial-author">
+                        <h3>Анна Л.</h3>
+                        <div class="rating">
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                            <span class="star full">★</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Регулярно посещаю чайные церемонии - это незабываемый опыт! Также радует ассортимент корейской острой лапши."</p>
+                <p class="testimonial-date">22 июня 2023</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="feedback-section" id="feedback">
+    <div class="feedback-container">
+        <h2 class="feedback-title">Оставьте отзыв</h2>
+        <form id="feedbackForm" class="feedback-form-wrapper">
+            <!-- Поле имени -->
+            <div class="feedback-input-group">
+                <label for="feedback-name" class="feedback-label">Ваше имя*</label>
+                <input type="text" id="feedback-name" class="feedback-input" required 
+                       minlength="2" maxlength="30" pattern="[A-Za-zА-Яа-яЁё\s]+" 
+                       title="Только буквы и пробелы">
+                <div class="feedback-error" id="feedback-name-error"></div>
+            </div>
+            
+            <!-- Рейтинг -->
+            <div class="feedback-input-group">
+                <label class="feedback-label">Ваша оценка: 
+                    <span id="feedback-rating-value">5</span>/10
+                </label>
+                <input type="range" id="feedback-rating" class="feedback-rating-slider" 
+                       min="1" max="10" value="5" step="1">
+            </div>
+            
+            <!-- Email -->
+            <div class="feedback-input-group">
+                <label for="feedback-email" class="feedback-label">Email (необязательно)</label>
+                <input type="email" id="feedback-email" class="feedback-input">
+                <div class="feedback-error" id="feedback-email-error"></div>
+            </div>
+            
+            <!-- Комментарий -->
+            <div class="feedback-input-group">
+                <label for="feedback-comment" class="feedback-label">Ваш отзыв*</label>
+                <textarea id="feedback-comment" class="feedback-textarea" 
+                          required minlength="10" maxlength="500"></textarea>
+                <div class="feedback-error" id="feedback-comment-error"></div>
+            </div>
+            
+            <!-- Кнопка -->
+            <button type="submit" class="feedback-submit-btn">Отправить отзыв</button>
+        </form>
+    </div>
+</section>
+
+
+<section class="order-service-section" id="order">
+    <div class="order-service-container">
+        <h2 class="order-service-title">Форма заказа услуги</h2>
+        <form id="orderServiceForm" class="order-service-form">
+            <!-- Имя -->
+            <div class="order-service-input-group">
+                <label for="order-first-name" class="order-service-label">Имя*</label>
+                <input type="text" id="order-first-name" class="order-service-input" required 
+                       minlength="2" maxlength="30" pattern="[A-Za-zА-Яа-яЁё\s]+">
+                <div class="order-service-error" id="order-first-name-error"></div>
+            </div>
+            
+            <!-- Фамилия -->
+            <div class="order-service-input-group">
+                <label for="order-last-name" class="order-service-label">Фамилия*</label>
+                <input type="text" id="order-last-name" class="order-service-input" required 
+                       minlength="2" maxlength="30" pattern="[A-Za-zА-Яа-яЁё\s]+">
+                <div class="order-service-error" id="order-last-name-error"></div>
+            </div>
+            
+            <!-- Телефон -->
+            <div class="order-service-input-group">
+                <label for="order-phone" class="order-service-label">Телефон*</label>
+                <input type="tel" id="order-phone" class="order-service-input" required
+                       pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" 
+                       placeholder="+7 (123) 456-78-90">
+                <div class="order-service-error" id="order-phone-error"></div>
+            </div>
+            
+            <!-- Email -->
+            <div class="order-service-input-group">
+                <label for="order-email" class="order-service-label">Email*</label>
+                <input type="email" id="order-email" class="order-service-input" required>
+                <div class="order-service-error" id="order-email-error"></div>
+            </div>
+            
+            <!-- Дата -->
+            <div class="order-service-input-group">
+                <label for="order-date" class="order-service-label">Дата*</label>
+                <input type="date" id="order-date" class="order-service-input" required
+                       min="2023-01-01" max="2025-12-31">
+                <div class="order-service-error" id="order-date-error"></div>
+            </div>
+            
+            <!-- Услуга -->
+            <div class="order-service-input-group">
+                <label for="order-service" class="order-service-label">Услуга*</label>
+                <select id="order-service" class="order-service-select" required>
+                    <option value="" disabled selected>Выберите услугу</option>
+                    <option value="tea-ceremony">Чайная церемония</option>
+                    <option value="delivery">Доставка продуктов</option>
+                    <option value="reserve">Отложить товар</option>
+                </select>
+                <div class="order-service-error" id="order-service-error"></div>
+            </div>
+            
+            <!-- Комментарий -->
+            <div class="order-service-input-group">
+                <label for="order-comment" class="order-service-label">Комментарий</label>
+                <textarea id="order-comment" class="order-service-textarea" 
+                          maxlength="500"></textarea>
+                <div class="order-service-error" id="order-comment-error"></div>
+            </div>
+            
+            <!-- Кнопка -->
+            <button type="submit" class="order-service-submit-btn">Отправить заявку</button>
+        </form>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Колонка 1 - Контакты -->
+            <div class="footer-column">
+                <h3 class="footer-title">Контакты</h3>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <i class="fas fa-map-marker-alt footer-icon"></i>
+                        <a href="https://yandex.ru/maps/org/kontinent/1264179319/?ll=60.604691%2C56.832452&mode=search&sll=60.604691%2C56.832452&sspn=0.060081%2C0.018797&text=%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82&z=15" target="_blank" class="footer-link">Г. Екатеринбург, проспект Ленина, 50Б. Бизнесцентр "Континент"</a>
+                    </li>
+                    <li class="footer-item">
+                        <i class="fas fa-phone-alt footer-icon"></i>
+                        <a href="tel:+79991234567" class="footer-link">+7 (999) 123-45-67</a>
+                    </li>
+                    <li class="footer-item">
+                        <i class="fas fa-envelope footer-icon"></i>
+                        <a href="mailto:info@asiatshop.ru" class="footer-link">info@asiatshop.ru</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Колонка 2 - Часы работы -->
+            <div class="footer-column">
+                <h3 class="footer-title">Часы работы</h3>
+                <ul class="footer-list">
+                    <li class="footer-item">Пн-Пт: 10:00 - 22:00</li>
+                    <li class="footer-item">Сб-Вс: 11:00 - 23:00</li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="VK">
+                        <i class="fab fa-vk"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Колонка 3 - Меню -->
+            <div class="footer-column">
+                <h3 class="footer-title">Меню</h3>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="docs/СВЧ лаба 4 я ультанул.pdf" class="footer-link" target="_blank">Продукты</a>
+                    </li>   
+                    <li class="footer-item">
+                        <a href="#services" class="footer-link">Услуги</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="#reviews" class="footer-link">Отзывы</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="#contacts" class="footer-link">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2023 Asian Food Shop. Все права защищены.</p>
+            <a href="#" class="footer-policy">Политика конфиденциальности</a>
+        </div>
+    </div>
+</footer>
+
+<header class="main-header">
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Asian Delight</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">О нашей компании</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Наши услуги</a></li>
+                <li class="nav-item"><a href="#reviews" class="nav-link">Отзывы клиентов</a></li>
+                <li class="nav-item"><a href="#feedback" class="nav-link">Оставить отзыв</a></li>
+                <li class="nav-item"><a href="#order" class="nav-link">Заказать услугу</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="nav-toggle-icon"></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

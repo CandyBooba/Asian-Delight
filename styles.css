@@ -1392,3 +1392,17 @@ section.show {
         background-color: #fff; /* Фон для прозрачных изображений */
     }
 }
+
+
+@media (max-width: 1199px) {
+    .hero-slider {
+        display: none;
+    }
+    
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    }
+}

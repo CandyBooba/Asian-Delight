@@ -1331,3 +1331,21 @@ section.show {
         height: 300px;
     }
 }
+
+/* Адаптивность логотипа */
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 200px;
+    }
+}

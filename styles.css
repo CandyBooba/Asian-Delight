@@ -1322,7 +1322,7 @@ input[type="date"]:valid::before {
 
 @media (max-width: 480px) {
     .logo img {
-        max-width: 200px;
+        max-width: 100%;
     }
 }
 

@@ -1,5 +1,3 @@
-// Замените или добавьте этот код в начало script.js
-
 document.addEventListener('DOMContentLoaded', function() {
   // Добавляем класс reveal всем секциям кроме hero
   const sections = document.querySelectorAll('section:not(.hero)');

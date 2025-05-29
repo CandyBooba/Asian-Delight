@@ -1,3 +1,64 @@
+// Замените или добавьте этот код в начало script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Добавляем класс reveal всем секциям кроме hero
+  const sections = document.querySelectorAll('section:not(.hero)');
+  sections.forEach(section => {
+    section.classList.add('reveal');
+  });
+
+  // Функция проверки видимости
+  function checkVisibility() {
+    // Для секций
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(reveal => {
+      const revealTop = reveal.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (revealTop < windowHeight - 100) {
+        reveal.classList.add('active');
+      }
+    });
+
+    // Для карточек услуг
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (cardTop < windowHeight - 100) {
+        card.classList.add('visible');
+      }
+    });
+
+    // Для отзывов
+    const testimonials = document.querySelectorAll('.testimonial');
+    testimonials.forEach(testimonial => {
+      const testimonialTop = testimonial.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (testimonialTop < windowHeight - 100) {
+        testimonial.classList.add('visible');
+      }
+    });
+
+    // Для форм
+    const forms = document.querySelectorAll('.feedback-container, .order-service-container');
+    forms.forEach(form => {
+      const formTop = form.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (formTop < windowHeight - 100) {
+        form.classList.add('visible');
+      }
+    });
+  }
+
+  // Проверяем при загрузке и при прокрутке
+  window.addEventListener('load', checkVisibility);
+  window.addEventListener('scroll', checkVisibility);
+  
+  // Инициализация
+  checkVisibility();
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Элементы слайдера
     const sliderImages = document.querySelectorAll('.slider-image');

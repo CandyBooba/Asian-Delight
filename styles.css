@@ -1209,3 +1209,101 @@ input[type="date"]:valid::before {
         height: 300px; /* Меньше высота на мобильных */
     }
 }
+
+
+
+/* Замените или добавьте эти стили в конец файла styles.css */
+
+/* Анимации для появления элементов снизу */
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Базовые стили для анимируемых элементов */
+.reveal {
+  position: relative;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Активное состояние - элемент видим */
+.reveal.active {
+  opacity: 1;
+  animation: slideUp 0.8s ease forwards;
+}
+
+/* Задержки для последовательного появления */
+.reveal:nth-child(1) { transition-delay: 0.1s; }
+.reveal:nth-child(2) { transition-delay: 0.2s; }
+.reveal:nth-child(3) { transition-delay: 0.3s; }
+.reveal:nth-child(4) { transition-delay: 0.4s; }
+.reveal:nth-child(5) { transition-delay: 0.5s; }
+
+/* Для карточек услуг - последовательное появление */
+.service-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Задержки для карточек */
+.cards-container .card-wrapper:nth-child(1) .service-card {
+  transition-delay: 0.2s;
+}
+.cards-container .card-wrapper:nth-child(2) .service-card {
+  transition-delay: 0.4s;
+}
+.cards-container .card-wrapper:nth-child(3) .service-card {
+  transition-delay: 0.6s;
+}
+.cards-container .card-wrapper:nth-child(4) .service-card {
+  transition-delay: 0.8s;
+}
+
+/* Для отзывов - аналогичный эффект */
+.testimonial {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.testimonial.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonials-grid .testimonial:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.testimonials-grid .testimonial:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.testimonials-grid .testimonial:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+/* Для форм - плавное появление */
+.feedback-container, 
+.order-service-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.feedback-container.visible, 
+.order-service-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

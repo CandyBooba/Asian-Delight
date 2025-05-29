@@ -1210,10 +1210,6 @@ input[type="date"]:valid::before {
     }
 }
 
-
-
-/* Замените или добавьте эти стили в конец файла styles.css */
-
 /* Анимации для появления элементов снизу */
 @keyframes slideUp {
   from { 

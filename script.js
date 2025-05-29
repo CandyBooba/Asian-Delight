@@ -49,38 +49,47 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Инициализация слайдера
     function initSlider() {
-    showSlide(0);
-    
-    // Уменьшаем интервал для мобильных устройств
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const interval = isMobile ? 3000 : 5000;
-    sliderInterval = setInterval(nextSlide, interval);
-    
-    // Остальной код остается без изменений
-    const slider = document.querySelector('.hero-slider');
-    slider.addEventListener('mouseenter', () => {
-        clearInterval(sliderInterval);
-    });
-    
-    slider.addEventListener('mouseleave', startSlider);
-    
-    nextArrow.addEventListener('click', () => {
-        nextSlide();
-        resetInterval();
-    });
-    
-    prevArrow.addEventListener('click', () => {
-        prevSlide();
-        resetInterval();
-    });
-    
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
+        showSlide(0);
+        startSlider();
+        
+        // Остановка при наведении
+        const slider = document.querySelector('.hero-slider');
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(sliderInterval);
+        });
+        
+        // Возобновление при уходе курсора
+        slider.addEventListener('mouseleave', startSlider);
+        
+        // Обработчики для стрелок
+        nextArrow.addEventListener('click', () => {
+            nextSlide();
             resetInterval();
         });
-    });
-}})
+        
+        prevArrow.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+        
+        // Обработчики для точек
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetInterval();
+            });
+        });
+    }
+    
+    // Сброс интервала
+    function resetInterval() {
+        clearInterval(sliderInterval);
+        sliderInterval = setInterval(nextSlide, intervalTime);
+    }
+    
+    // Инициализируем слайдер
+    initSlider();
+});
 
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', function() {
@@ -298,35 +307,3 @@ document.addEventListener('DOMContentLoaded', function() {
         productsLink.target = '_blank';
     }
 });
-
-
-// Анимация появления элементов при скролле
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('section, .show-on-scroll');
-    
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementPosition < windowHeight - 100) {
-            element.classList.add('show');
-        }
-    });
-};
-
-// Инициализация при загрузке
-window.addEventListener('DOMContentLoaded', () => {
-    animateOnScroll();
-    
-    // Анимация для футера
-    const footer = document.querySelector('.site-footer');
-    const footerPosition = footer.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    
-    if (footerPosition < windowHeight) {
-        footer.classList.add('show');
-    }
-});
-
-// Обработчик скролла
-window.addEventListener('scroll', animateOnScroll);

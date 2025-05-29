@@ -1,4 +1,4 @@
-/* ===== Общие стили ===== */
+/* Общие стили */
 * {
     margin: 0;
     padding: 0;
@@ -10,198 +10,32 @@ body {
     overflow-x: hidden;
     color: #333;
     background-color: #fff;
-    scroll-behavior: smooth;
 }
 
-/* Анимации */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes starPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.3); }
-}
-
-@keyframes ripple {
-    0% {
-        transform: scale(0, 0);
-        opacity: 1;
-    }
-    20% {
-        transform: scale(25, 25);
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: scale(40, 40);
-    }
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-5px); }
-    40%, 80% { transform: translateX(5px); }
-}
-
-/* Общие стили секций */
-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.show-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.show-on-scroll.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Общие стили заголовков секций */
-.section-title,
-.about-title,
-.services h2,
-.feedback-title,
-.order-service-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #e74c3c;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.section-title::after,
-.about-title::after,
-.services h2::after,
-.feedback-title::after,
-.order-service-title::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, #e74c3c, #e67e22);
-    border-radius: 3px;
-}
-
-/* Общие стили кнопок */
-.cta-button,
-.feedback-submit-btn,
-.order-service-submit-btn {
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;
-    max-width: 300px;
-}
-
-.cta-button {
-    padding: 12px 25px;
-    background-color: #e74c3c;
-    border-radius: 25px;
-}
-
-.feedback-submit-btn {
-    padding: 12px 25px;
-    background-color: #e67e22;
-}
-
-.order-service-submit-btn {
-    padding: 14px;
-    background-color: #e67e22;
-    font-weight: 600;
-    border-radius: 6px;
-}
-
-/* ===== Секция 1: Hero ===== */
+/* Герой секция */
 .hero {
     display: flex;
     min-height: 100vh;
     padding: 20px;
     align-items: center;
-    background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
+    background-color: #fff8f0;
 }
 
 .hero-content {
     flex: 1;
     padding: 0 40px;
     max-width: 600px;
-    animation: fadeInLeft 0.8s 0.2s both;
 }
 
 .logo img {
     max-width: 450px;
     margin-bottom: 30px;
-    transition: transform 0.5s ease;
-}
-
-.logo:hover img {
-    transform: scale(1.05) rotate(-2deg);
 }
 
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #e74c3c;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
 .description {
@@ -209,12 +43,6 @@ section.show {
     line-height: 1.6;
     margin-bottom: 25px;
     color: #555;
-    transition: all 0.3s ease;
-}
-
-.description:hover {
-    color: #333;
-    transform: translateX(5px);
 }
 
 .slogan {
@@ -222,23 +50,23 @@ section.show {
     font-weight: bold;
     margin-bottom: 30px;
     color: #e67e22;
-    position: relative;
-    display: inline-block;
 }
 
-.slogan::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background-color: #e67e22;
-    transition: width 0.4s ease;
+.cta-button {
+    padding: 12px 25px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.slogan:hover::after {
-    width: 100%;
+.cta-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
 }
 
 .hero-slider {
@@ -247,10 +75,7 @@ section.show {
     height: 70vh;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    animation: fadeInRight 0.8s 0.4s both;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .slider-container {
@@ -265,13 +90,11 @@ section.show {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    transform: scale(1.1);
+    transition: opacity 1s ease-in-out;
 }
 
 .slider-image.active {
     opacity: 1;
-    transform: scale(1);
 }
 
 .slider-arrow {
@@ -287,17 +110,15 @@ section.show {
     font-size: 1.2rem;
     cursor: pointer;
     z-index: 10;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px);
 }
 
 .slider-arrow:hover {
     background-color: rgba(255, 255, 255, 0.9);
-    transform: translateY(-50%) scale(1.2);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .slider-arrow-left {
@@ -324,30 +145,32 @@ section.show {
     background-color: #bbb;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot:hover {
-    transform: scale(1.3);
+    transition: background-color 0.3s ease;
 }
 
 .dot.active {
     background-color: #e74c3c;
-    transform: scale(1.3);
-    box-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
 }
 
-/* ===== Секция 2: About ===== */
+/* Секция "О компании" */
+/* Секция "О компании" */
 .about {
     padding: 80px;
     background-color: #fff;
-    animation-delay: 0.1s;
+    position: relative;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .about-content-wrapper {
     display: flex;
     gap: 60px;
-    align-items: stretch;
+    align-items: stretch; /* Растягиваем до одинаковой высоты */
 }
 
 .about-text {
@@ -356,12 +179,6 @@ section.show {
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.about-text:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .about-text p {
@@ -369,17 +186,6 @@ section.show {
     line-height: 1.7;
     margin-bottom: 22px;
     color: #555;
-    position: relative;
-    padding-left: 20px;
-}
-
-.about-text p::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #e67e22;
-    font-size: 1.5rem;
-    line-height: 1;
 }
 
 .about-image {
@@ -387,46 +193,30 @@ section.show {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    transition: transform 0.5s ease;
-    position: relative;
-}
-
-.about-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(230, 126, 34, 0.1), rgba(231, 76, 60, 0.1));
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.about-image:hover {
-    transform: scale(1.02) rotate(1deg);
-}
-
-.about-image:hover::before {
-    opacity: 1;
 }
 
 .about-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s ease;
+    transition: transform 0.4s ease;
 }
 
-.about-image:hover img {
-    transform: scale(1.05);
+.about-image img:hover {
+    transform: scale(1.02);
 }
 
-/* ===== Секция 3: Services ===== */
+/* Услуги */
 .services {
     padding: 80px;
-    background: linear-gradient(135deg, #fff8f0 0%, #fff1e6 100%);
-    animation-delay: 0.2s;
+    background-color: #fff8f0; /* Изменено с #f9f9f9 */
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #e74c3c;
 }
 
 .cards-container {
@@ -442,7 +232,6 @@ section.show {
     width: 23%;
     min-width: 250px;
     margin-bottom: 20px;
-    perspective: 1000px;
 }
 
 .service-card {
@@ -454,66 +243,30 @@ section.show {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
-    overflow: hidden;
-    transform-style: preserve-3d;
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #e74c3c, #e67e22);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px) rotateX(5deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.service-card:hover::before {
-    transform: scaleX(1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-header {
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover .card-header {
-    transform: scale(1.05);
 }
 
 .card-header i {
     font-size: 3rem;
     color: #e67e22;
     margin-bottom: 15px;
-    transition: all 0.3s ease;
-}
-
-.service-card:hover .card-header i {
-    color: #e74c3c;
-    transform: rotate(15deg) scale(1.1);
 }
 
 .card-header h3 {
     font-size: 1.3rem;
     color: #333;
     margin: 0;
-    transition: color 0.3s ease;
-}
-
-.service-card:hover .card-header h3 {
-    color: #e74c3c;
 }
 
 .card-description {
@@ -522,46 +275,137 @@ section.show {
     background: white;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: max-height 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: max-height 0.5s ease;
 }
 
 .card-wrapper.active .card-description {
     max-height: 500px;
     padding: 20px;
     margin-top: -10px;
-    animation: fadeInUp 0.5s both;
 }
 
 .highlight {
     color: #e74c3c;
     font-weight: bold;
-    position: relative;
-    display: inline-block;
 }
 
-.highlight::after {
-    content: '';
+/* Секция отзывов */
+.reviews {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.reviews h2 {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 50px;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.reviews-slider {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.review {
     position: absolute;
-    bottom: -2px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 2px;
-    background-color: #e74c3c;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
+    padding: 30px;
+    background: #fff8f0;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateY(50px);
 }
 
-.highlight:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+.review.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* ===== Секция 4: Testimonials ===== */
+.stars {
+    color: #e67e22;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.review-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e67e22;
+    margin-bottom: 20px;
+}
+
+.review-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #333;
+}
+
+.arrow-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 15px 0;
+}
+
+.arrow-btn:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+.review-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
 .testimonials {
     padding: 80px 0;
     background-color: #fff;
-    animation-delay: 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 50px;
 }
 
 .testimonials-grid {
@@ -576,40 +420,17 @@ section.show {
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.testimonial::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 0;
-    background: linear-gradient(to bottom, #e74c3c, #e67e22);
-    transition: height 0.6s ease;
+    transition: transform 0.3s ease;
 }
 
 .testimonial:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.testimonial:hover::before {
-    height: 100%;
+    transform: translateY(-5px);
 }
 
 .testimonial-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.testimonial:hover .testimonial-header {
-    transform: translateX(10px);
 }
 
 .testimonial-avatar {
@@ -619,24 +440,12 @@ section.show {
     object-fit: cover;
     margin-right: 15px;
     border: 2px solid #e67e22;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.testimonial:hover .testimonial-avatar {
-    transform: scale(1.1);
-    border-color: #e74c3c;
 }
 
 .testimonial-author h3 {
     margin: 0;
     font-size: 1.2rem;
     color: #333;
-    transition: color 0.3s ease;
-}
-
-.testimonial:hover .testimonial-author h3 {
-    color: #e74c3c;
 }
 
 .rating {
@@ -648,11 +457,6 @@ section.show {
 .star {
     position: relative;
     color: #ddd;
-    transition: color 0.3s ease;
-}
-
-.testimonial:hover .star.full {
-    animation: starPulse 0.5s ease;
 }
 
 .star.full {
@@ -674,28 +478,30 @@ section.show {
     color: #555;
     margin-bottom: 15px;
     font-style: italic;
-    transition: color 0.3s ease;
-}
-
-.testimonial:hover .testimonial-text {
-    color: #333;
 }
 
 .testimonial-date {
     font-size: 0.9rem;
     color: #888;
-    transition: color 0.3s ease;
 }
 
-.testimonial:hover .testimonial-date {
-    color: #666;
+.testimonials-cta {
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* ===== Секция 5: Feedback ===== */
+/* Секция отзывов с уникальными классами */
 .feedback-section {
     padding: 40px 0;
-    background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
-    animation-delay: 0.4s;
+    background-color: #fff8f0;
+    font-family: Arial, sans-serif;
+}
+
+.feedback-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 50px;
 }
 
 .feedback-container {
@@ -708,20 +514,11 @@ section.show {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    text-align: center;
-}
-
-.feedback-form-wrapper:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .feedback-input-group {
     margin-bottom: 20px;
-    position: relative;
-    text-align: left;
 }
 
 .feedback-label {
@@ -729,7 +526,6 @@ section.show {
     margin-bottom: 8px;
     font-weight: bold;
     color: #333;
-    transition: color 0.3s ease;
 }
 
 .feedback-input,
@@ -739,31 +535,13 @@ section.show {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
-    transition: all 0.3s ease;
-    background-color: #f9f9f9;
+    transition: border 0.3s;
 }
 
 .feedback-input:focus,
 .feedback-textarea:focus {
     border-color: #e67e22;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
-    background-color: #fff;
-}
-
-.feedback-input-group::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #e74c3c, #e67e22);
-    transition: width 0.3s ease;
-}
-
-.feedback-input-group:focus-within::after {
-    width: 100%;
 }
 
 .feedback-rating-slider {
@@ -773,12 +551,6 @@ section.show {
     -webkit-appearance: none;
     background: #ddd;
     border-radius: 5px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.feedback-rating-slider:hover {
-    background: #ccc;
 }
 
 .feedback-rating-slider::-webkit-slider-thumb {
@@ -788,12 +560,6 @@ section.show {
     border-radius: 50%;
     background: #e67e22;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.feedback-rating-slider::-webkit-slider-thumb:hover {
-    background: #e74c3c;
-    transform: scale(1.2);
 }
 
 .feedback-error {
@@ -801,14 +567,29 @@ section.show {
     font-size: 14px;
     margin-top: 5px;
     display: none;
-    animation: shake 0.5s ease;
 }
 
-/* ===== Секция 6: Order Service ===== */
+.feedback-submit-btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.feedback-submit-btn:hover {
+    background-color: #d35400;
+}
+
+/* Секция заказа услуги */
 .order-service-section {
     padding: 50px 0;
     background-color: #fff;
-    animation-delay: 0.5s;
+    font-family: Arial, sans-serif;
 }
 
 .order-service-container {
@@ -817,24 +598,22 @@ section.show {
     padding: 0 20px;
 }
 
+.order-service-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #e74c3c;
+    margin-bottom: 30px;
+}
+
 .order-service-form {
     background: #fff8f0;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    text-align: center;
-}
-
-.order-service-form:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
 
 .order-service-input-group {
     margin-bottom: 20px;
-    position: relative;
-    text-align: left;
 }
 
 .order-service-label {
@@ -842,28 +621,23 @@ section.show {
     margin-bottom: 8px;
     font-weight: 600;
     color: #333;
-    transition: color 0.3s ease;
 }
 
 .order-service-input,
-.order-service-select,
-.order-service-textarea {
+.order-service-select {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 6px;
     font-size: 16px;
-    transition: all 0.3s ease;
-    background-color: #f9f9f9;
+    transition: all 0.3s;
 }
 
 .order-service-input:focus,
-.order-service-select:focus,
-.order-service-textarea:focus {
+.order-service-select:focus {
     border-color: #e67e22;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
-    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.2);
 }
 
 .order-service-select {
@@ -872,11 +646,6 @@ section.show {
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 1em;
-    cursor: pointer;
-}
-
-.order-service-select:hover {
-    background-color: #fff;
 }
 
 .order-service-error {
@@ -884,143 +653,80 @@ section.show {
     font-size: 14px;
     margin-top: 5px;
     display: none;
-    animation: shake 0.5s ease;
 }
 
-/* ===== Секция 7: Header ===== */
-.main-header {
-    position: fixed;
+.order-service-submit-btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.order-service-submit-btn:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+}
+
+/* Календарь */
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    background-color: rgba(44, 62, 80, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.main-nav {
-    padding: 15px 0;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-logo a {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.nav-logo a:hover {
-    color: #e67e22;
-    transform: scale(1.05);
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-item {
-    margin-left: 30px;
-    position: relative;
-}
-
-.nav-link {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 5px 0;
-    position: relative;
-}
-
-.nav-link:hover {
-    color: #e67e22;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
     bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #e67e22;
-    transition: width 0.3s ease;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
 }
 
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.nav-toggle {
-    display: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-}
-
-.nav-toggle-icon {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: #fff;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.nav-toggle-icon::before,
-.nav-toggle-icon::after {
-    content: '';
+input[type="date"]::before {
+    content: attr(placeholder);
     position: absolute;
+    color: #999;
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+    content: "";
+}
+
+.order-service-textarea {
     width: 100%;
-    height: 2px;
-    background-color: #fff;
-    left: 0;
-    transition: all 0.3s ease;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s;
+    min-height: 120px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
 }
 
-.nav-toggle-icon::before {
-    top: -8px;
+.order-service-textarea:focus {
+    border-color: #e67e22;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.2);
 }
 
-.nav-toggle-icon::after {
-    bottom: -8px;
-}
 
-.nav-toggle.active .nav-toggle-icon {
-    background-color: transparent;
-}
-
-.nav-toggle.active .nav-toggle-icon::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.nav-toggle.active .nav-toggle-icon::after {
-    transform: rotate(-45deg);
-    bottom: 0;
-}
-
-/* ===== Секция 8: Footer ===== */
+/* Футер с уникальными классами */
 .site-footer {
     background-color: #2c3e50;
     color: #ecf0f1;
     padding: 50px 0 20px;
+    font-family: 'Arial', sans-serif;
 }
 
 .footer-container {
@@ -1128,7 +834,129 @@ section.show {
     color: #e67e22;
 }
 
-/* ===== Адаптивность ===== */
+/* Стили для ссылки на карту в футере */
+.footer-item a[href^="https://yandex.ru/maps/org/kontinent/1264179319/?ll=60.604691%2C56.832452&mode=search&sll=60.604691%2C56.832452&sspn=0.060081%2C0.018797&text=%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82&z=15"] {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-item a[href^="https://yandex.ru/maps/org/kontinent/1264179319/?ll=60.604691%2C56.832452&mode=search&sll=60.604691%2C56.832452&sspn=0.060081%2C0.018797&text=%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B8%D0%BD%D0%B5%D0%BD%D1%82&z=15"]:hover {
+    color: #e67e22;
+
+}
+
+
+/* Навигационная панель */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(44, 62, 80, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.main-nav {
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-logo a:hover {
+    color: #e67e22;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: 30px;
+    position: relative;
+}
+
+.nav-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #e67e22;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #e67e22;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-toggle-icon {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.nav-toggle-icon::before {
+    top: -8px;
+}
+
+.nav-toggle-icon::after {
+    bottom: -8px;
+}
+
+/* Адаптивность */
 @media (max-width: 1200px) {
     .hero {
         flex-direction: column;
@@ -1139,17 +967,19 @@ section.show {
         text-align: center;
         margin-bottom: 40px;
         max-width: 100%;
-        animation: fadeInUp 0.8s both;
     }
     
     .hero-slider {
         width: 100%;
         max-width: 800px;
         height: 50vh;
-        animation: fadeInUp 0.8s 0.2s both;
     }
     
-    .about, .services {
+    .about {
+        padding: 60px 40px;
+    }
+    
+    .services {
         padding: 60px 40px;
     }
     
@@ -1163,14 +993,13 @@ section.show {
 }
 
 @media (max-width: 992px) {
-    .about-content-wrapper {
+    .about {
         flex-direction: column;
         gap: 40px;
     }
     
     .about-image {
         margin-top: 40px;
-        height: 400px;
     }
     
     .about-text {
@@ -1182,6 +1011,7 @@ section.show {
     }
     
     .services h2,
+    .reviews h2,
     .section-title,
     .order-service-title {
         font-size: 2rem;
@@ -1218,16 +1048,20 @@ section.show {
         font-size: 1.1rem;
     }
     
-    .about, .services {
+    .about {
         padding: 50px 20px;
     }
     
-    .about-title {
+    .about h2 {
         font-size: 1.8rem;
     }
     
     .about-text {
         padding: 20px;
+    }
+    
+    .services {
+        padding: 50px 20px;
     }
     
     .card-wrapper {
@@ -1261,6 +1095,20 @@ section.show {
     
     .nav-toggle {
         display: block;
+    }
+    
+    .nav-toggle.active .nav-toggle-icon {
+        background-color: transparent;
+    }
+    
+    .nav-toggle.active .nav-toggle-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    
+    .nav-toggle.active .nav-toggle-icon::after {
+        transform: rotate(-45deg);
+        bottom: 0;
     }
     
     .testimonials-grid {
@@ -1301,8 +1149,9 @@ section.show {
         font-size: 1rem;
     }
     
-    .about-title,
+    .about h2,
     .services h2,
+    .reviews h2,
     .section-title,
     .order-service-title {
         font-size: 1.6rem;
@@ -1322,87 +1171,41 @@ section.show {
     .feedback-input,
     .feedback-textarea,
     .order-service-input,
-    .order-service-select,
-    .order-service-textarea {
+    .order-service-select {
         padding: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about {
+        padding: 60px 40px;
+    }
+    
+    .about-content-wrapper {
+        flex-direction: column;
+        gap: 40px;
     }
     
     .about-image {
-        height: 300px;
-    }
-}
-
-
-
-/* Адаптивность логотипа */
-.logo img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (max-width: 768px) {
-    .logo img {
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo img {
-        max-width: 200px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .hero {
-        flex-direction: column;
-        padding-top: 100px;
-        min-height: auto; /* Добавляем это */
-    }
-    
-    .hero-content {
-        text-align: center;
-        margin-bottom: 40px;
-        max-width: 100%;
-        padding: 0 20px; /* Добавляем это */
-        animation: fadeInUp 0.8s both;
-    }
-    
-    .hero-slider {
-        width: 100%;
-        max-width: 800px;
-        height: 400px; /* Фиксированная высота вместо 50vh */
-        margin: 0 auto; /* Центрируем */
-        animation: fadeInUp 0.8s 0.2s both;
+        height: 400px; /* Фиксированная высота на планшетах */
     }
 }
 
 @media (max-width: 768px) {
-    .hero-slider {
-        height: 350px; /* Уменьшаем высоту для средних экранов */
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-slider {
-        height: 250px; /* Еще меньше для маленьких экранов */
+    .about {
+        padding: 50px 20px;
     }
     
-    .slider-image {
-        object-fit: contain; /* Чтобы изображения полностью помещались */
-        background-color: #fff; /* Фон для прозрачных изображений */
-    }
-}
-
-
-@media (max-width: 1199px) {
-    .hero-slider {
-        display: none;
+    .about-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
     }
     
-    .hero-content {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 20px;
-        text-align: center;
+    .about-text {
+        padding: 25px;
+    }
+    
+    .about-image {
+        height: 300px; /* Меньше высота на мобильных */
     }
 }
